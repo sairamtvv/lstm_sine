@@ -4,27 +4,6 @@ import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
-N = 100
-L = 1000
-T = 20
-
-x = np.empty((N,L), np.float32)
-x[:] = np.array(range(L)) + np.random.randint(-4*T, 4*T, N).reshape(N,1)
-
-y = np.sin(x/1.0/T).astype(np.float32)
-
-
-plt.figure(figsize=(10,8))
-plt.title("Time series")
-
-plt.xlabel("x")
-plt.ylabel("y")
-plt.xticks(fontsize=20)
-plt.yticks(fontsize=20)
-
-
-plt.plot(np.arange(x.shape[1]), y[0,:], "r", linewidth=2.0)
-# plt.show()
 
 
 
@@ -64,6 +43,27 @@ class LSTMpredictor(nn.Module):
 
 
 if __name__ =="__main__":
+    N  = 100
+    L = 1000
+    T = 20
+
+    x = np.empty((N, L), np.float32)
+    x[:] = np.array(range(L)) + np.random.randint(-4 * T, 4 * T, N).reshape(N, 1)
+
+    y = np.sin(x / 1.0 / T).astype(np.float32)
+
+    plt.figure(figsize=(10, 8))
+    plt.title("Time series")
+
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.xticks(fontsize=20)
+    plt.yticks(fontsize=20)
+
+    plt.plot(np.arange(x.shape[1]), y[0, :], "r", linewidth=2.0)
+    # plt.show()
+
+
     train_input = torch.from_numpy(y[3:, :-1]) # 97, 999
     train_target = torch.from_numpy(y[3:, 1:])
 

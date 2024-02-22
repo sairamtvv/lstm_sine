@@ -1,0 +1,6 @@
+https://stackoverflow.com/questions/63294347/difference-between-hidden-dimension-and-n-layers-in-rnn-using-pytorch
+https://medium.com/analytics-vidhya/lstms-explained-a-complete-technically-accurate-conceptual-guide-with-keras-2a650327e8f2
+https://towardsdatascience.com/pytorch-lstms-for-time-series-data-cd16190929d7
+
+most imp
+https://colah.github.io/posts/2015-08-Understanding-LSTMs/
